@@ -1,0 +1,38 @@
+<script>
+function foo(key, value) {
+    // simply prints the key-value pair
+    console.log(key + ": " + value);
+}
+// Initialize
+var credits = {
+    CS319: 4,
+    CS315: 3,
+    MATH225: 4,
+    ENG401: 2
+};
+  
+// Get the value for a given key
+console.log("Value for CS315 is: " + credits["CS315"]);
+
+// Add a new element
+credits['GRA131'] = 3;
+
+// Remove an element 
+delete credits["ENG401"];
+
+// Modify the value of an existing element
+credits["CS319"] = 0
+
+// Search for the existence of a key
+console.log(credits.hasOwnProperty("CS319"));
+console.log(credits.hasOwnProperty("CS101"));
+
+// Search for the existence of a value
+console.log(Object.values(credits).includes(9));
+console.log(Object.values(credits).includes(3));
+
+// Loop through an associative array, apply a function, called foo, which simply prints the key-value pair
+for (var k in credits) {
+     foo(k, credits[k]);
+}
+</script>
