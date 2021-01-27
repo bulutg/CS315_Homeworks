@@ -1,0 +1,73 @@
+<script>
+    console.log('-------------pretest');
+
+    // pretest
+    var i = 0;
+
+    while (i < 3) {
+        console.log(i);
+        i++;
+    }
+
+    console.log('-------------posttest');
+
+    // posttest
+    i = 0
+
+    do {
+        console.log(i);
+        i++;
+    } while (i < 3);
+
+    console.log('-------------break');
+
+    // unlabeled break
+    i = 0;
+
+    while (i < 3) {
+        if (i == 2 ) break;
+        console.log(i);
+        i++;
+    }
+
+    console.log('-------------continue');
+
+    // unlabeled continue
+    i = 0;
+
+    while (i < 3) {
+        i++;
+        if (i == 2 ) continue;
+        console.log(i);
+    }
+
+    console.log('-------------labeled break');
+
+    // labeled break
+    i = 0;
+    label:
+        while (true) {
+            while (true) {
+                console.log(i);
+                if (i == 1) break label;
+                i++;
+            }
+        }
+
+    console.log('-------------labeled continue');
+
+    // labeled continue
+    i = 0;
+    var j = 0;
+    anotherlabel:
+        while (i < 2) {
+            while (j < 2) {
+                console.log(i + ", ", j);
+                j++;
+                if (i == j) continue anotherlabel;
+            }
+            i++;
+            console.log(i);
+        }
+
+    </script>
